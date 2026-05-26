@@ -94,7 +94,7 @@ Further hyperparameter tuning will likely not improve the performance of either 
 
 In total, 5913 images were correctly classified and 1945 images were classified incorrectly.
 
-![Executors](images/spark_ui_executors.png)
+![Executors](images/Model2_ConfusionMatrix.png)
 
 
 In conclusion, logistic regression served as a baseline but lacked the complexity required to capture nonlinear relationships in image-derived features. PCA effectively reduced dimensionality while preserving most variance. However, PCA + classical ML models reached a performance ceiling. To significantly improve performance, future work should focus on deep learning-based feature extraction (CNNs).
