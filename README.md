@@ -57,7 +57,7 @@ Ran 4 executors with 32g of memory each.
 ![Executors](images/spark_ui_executors.png)
 
 
-**Second Model**
+### Second Model
 
 For our second model, we used dimensionality reduction followed by a Random Forest Model to determine the species of the plants in the dataset. Principle Component Analysis (PCA) was used for the dimensionality reduction which was implemented with pyspark.ml.feature.PCA. The RandomForestClassifier from pyspark.ml.classification was used to implement the supervised ML model on the reduced-dimension features. A Logistic Regression model was initally implemented, but it did not perform very well which was why the RandomForestClassifier was implemented. However, both models provided insightful findings for our dataset.
 
