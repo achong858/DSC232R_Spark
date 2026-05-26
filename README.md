@@ -67,9 +67,25 @@ Principal Component Analysis (PCA) retained k = 200 components, which explained 
 
 The random forest model is in the mild overfitting region with the high training score but moderate validation and test scores. The logistic regression model on the other hand is in the underfitting region with low scores in training, validation and test sets. This indicates insufficient model complexity to capture nonlinear relationships in our dataset.
 
-Some future improvements that could be done for this model is used a more advanced model like Convolutional Neural Network (CNN) which will likely deliver better image classification accuracy. Further hyperparameter tuning will likely not improve the performance of either the random forest or logistic regression models based on the investigation done in this project.
+Some future improvements that could be done for this model is used a more advanced model like Convolutional Neural Network (CNN) which will likely deliver better image classification accuracy. The results indicate that the dimensionality reduction with PCA reduced computational cost while retaining 95% variance. PCA likely improved model stability and efficiency. 
 
-| Parameter(s)    | Training Accuracy | Validation Accuracy | Test Accuracy|
-|-----------------|-------------------|---------------------|--------------|
-| k=10, 8x8 image | 0.46              | 0.45                | 0.45         |
+Further hyperparameter tuning will likely not improve the performance of either the random forest or logistic regression models based on the investigation done in this project. The first table below show the result accuracies for different parameters that were tested in the logistic regression model. The second table shows the accuracy results for different parameters of the random forest model.
+
+| Parameter(s)       | Training Accuracy | Validation Accuracy | Test Accuracy |
+|--------------------|-------------------|---------------------|---------------|
+| k=10, 8x8 image    | 0.46              | 0.45                | 0.45          |
+| k=100, 8x8 image   | 0.63              | 0.62                | 0.63          |
+| k=100, 16x16 image | 0.61              | 0.61                | 0.60          |
+| k=100, 24x24 image | 0.60              | 0.60                | 0.60          |
+| k=300, 24x24 image | 0.66              | 0.62                | 0.63          |
+
+| Parameter(s)              | Training Accuracy | Validation Accuracy | Test Accuracy |  PCA, image size   |
+|---------------------------|-------------------|---------------------|---------------|--------------------|
+| numTrees=50, maxDepth=8   | 0.70              | 0.62                | 0.63          | k=300, 24x24 image |
+| numTrees=100, maxDepth=12 | 0.92              | 0.75                | 0.74          | k=300, 24x24 image |
+| numTrees=100, maxDepth=10 | 0.84              | 0.70                | 0.71          | k=300, 24x24 image |
+| numTrees=150, maxDepth=12 | 0.93              | 0.76                | 0.76          | k=300, 24x24 image |
+| numTrees=100, maxDepth=14 | 0.97              | 0.77                | 0.78          | k=300, 24x24 image |
+| numTrees=100, maxDepth=12 | 0.92              | 0.75                | 0.74          | k=300, 32x32 image |
+| numTrees=100, maxDepth=12 | 0.92              | 0.75                | 0.75          | k=200, 24x24 image |
 
