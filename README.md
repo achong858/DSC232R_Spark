@@ -68,3 +68,8 @@ Principal Component Analysis (PCA) retained k = 200 components, which explained 
 The random forest model is in the mild overfitting region with the high training score but moderate validation and test scores. The logistic regression model on the other hand is in the underfitting region with low scores in training, validation and test sets. This indicates insufficient model complexity to capture nonlinear relationships in our dataset.
 
 Some future improvements that could be done for this model is used a more advanced model like Convolutional Neural Network (CNN) which will likely deliver better image classification accuracy. Further hyperparameter tuning will likely not improve the performance of either the random forest or logistic regression models based on the investigation done in this project.
+
+| Parameter(s)    | Training Accuracy | Validation Accuracy | Test Accuracy|
+|-----------------|-------------------|---------------------|--------------|
+| k=10, 8x8 image | 0.46              | 0.45                | 0.45         |
+
