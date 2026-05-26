@@ -55,3 +55,8 @@ Conducted speed up analysis on XGBoost options 2 & 3, both initialized with same
 Ran 4 executors with 32g of memory each.
 
 ![Executors](images/spark_ui_executors.png)
+
+
+**Second Model**
+
+For our second model, we used dimensionality reduction followed by a Random Forest Model to determine the species of the plants in the dataset.
