@@ -92,6 +92,8 @@ Further hyperparameter tuning will likely not improve the performance of either 
 | numTrees=100, maxDepth=12 | 0.92              | 0.75                | 0.75          | k=200, 24x24 image |
 
 
+Higher accuracies in the random forest model came with the tradeoff of a longer training time. The Spark driver memory had to be increased from the recommended 2GB to 12GB for the model training to complete in a reasonable timeframe.
+
 In total, 5913 images were correctly classified and 1945 images were classified incorrectly.
 
 ![Executors](images/Model2_ConfusionMatrix.png)
