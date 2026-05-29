@@ -59,13 +59,17 @@ Ran 4 executors with 32g of memory each.
 
 ### Second Model
 
-LINK TO NOTEBOOK
+[LINK TO NOTEBOOK](https://github.com/achong858/DSC232R_Spark/blob/8db34aefddeb4bc159a6693e9855d77b5498c02e/Diseased%20Plants%20Model2.ipynb)
 
 For our second model, we used dimensionality reduction followed by a Random Forest Model to determine the species of the plants in the dataset. Principle Component Analysis (PCA) was used for the dimensionality reduction which was implemented with pyspark.ml.feature.PCA. The RandomForestClassifier from pyspark.ml.classification was used to implement the supervised ML model on the reduced-dimension features. A Logistic Regression model was initally implemented, but it did not perform very well which was why the RandomForestClassifier was implemented. However, both models provided insightful findings for our dataset.
 
 The random forest model achieved a training accuracy of approximately 0.91 while the validation and test accuracies were both about 0.75. The gap between training and unseen data performance suggests hat the model is learning patterns in the training set that do not fully generalize to new samples. In contrast, the logistic regression model achieved approximately 0.61-0.64 accuracy across training, validation, and test sets, indicating more consistent but lower performance. 
 
 Principal Component Analysis (PCA) retained k = 200 components, and had approximately 0.95 (95%) of the total variance in the original feature space. The high variance indicates that the dimensionality reduction preserved most of the important information in the dataset. However, high explained variance does not guarantee high classification performance, since PCA is unsupervised and does not preserve class-separating directions.
+
+The scree plot showed that approximately the first two principle component preserved approximately 55% of the dataset information. There is a sharp drop off ('elbow') after the sixth principle component. The cummulative explained variance plot indicates that 200 principle components retained approximately 95% of the total variance which shows PCA effectively reduced dimensionality while preserving most image information.
+
+![Executors](images/Scree_Plot.png)
 
 The random forest model is in the mild overfitting region with the high training score but moderate validation and test scores. The logistic regression model on the other hand is in the underfitting region with low scores in training, validation and test sets. This indicates insufficient model complexity to capture nonlinear relationships in our dataset.
 
